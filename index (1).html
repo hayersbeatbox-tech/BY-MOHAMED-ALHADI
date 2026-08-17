@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Port Sudan — A Film</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#stage">Skip to film</a>
+
+  <div id="intro" class="intro">
+    <div class="intro-bg" aria-hidden="true"></div>
+    <div class="intro-frame">
+      <p class="intro-kicker fade-line d1">An architectural film</p>
+      <ol class="credits">
+        <li class="fade-line d2">
+          <span>University</span>
+          <strong>Garden City University</strong>
+        </li>
+        <li class="fade-line d3">
+          <span>Faculty</span>
+          <strong>Engineering, Architecture &amp; Urban Planning</strong>
+        </li>
+        <li class="fade-line d4">
+          <span>Year &amp; semester</span>
+          <strong>Fifth Year · Semester 09</strong>
+        </li>
+        <li class="fade-line d5 credit-title">
+          <span>Project</span>
+          <strong>Building Materials Factory — Port Sudan</strong>
+        </li>
+        <li class="fade-line d6">
+          <span>Student</span>
+          <strong>Mohammed Al-Hadi Yagoub</strong>
+        </li>
+        <li class="fade-line d7">
+          <span>Supervisors</span>
+          <strong>Dr. Ibrahim Abd El-Moneim<br />Dr. Mona Elias<br />Dr. Mohammed Ibrahim</strong>
+        </li>
+      </ol>
+      <div class="watch-wrap">
+        <button type="button" id="begin" class="watch">
+          مشاهدة الفيديو
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="letterbox top" aria-hidden="true"></div>
+  <div class="letterbox bot" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="chrome hud" hidden>
+    <span class="brand">Port Sudan</span>
+    <div class="controls">
+      <button type="button" id="btnPlay" aria-label="Pause">❚❚</button>
+      <button type="button" id="btnMute" aria-label="Mute">♪</button>
+      <button type="button" id="btnCaption" aria-pressed="true">CC</button>
+      <button type="button" id="btnReplay" aria-label="Replay">↺</button>
+      <button type="button" id="openPlan" aria-label="Drawings">＋</button>
+    </div>
+  </header>
+
+  <nav class="timeline hud" aria-label="Chapters" hidden>
+    <ol id="ticks"></ol>
+    <div class="progress"><i id="bar"></i></div>
+  </nav>
+
+  <main id="stage" class="stage" tabindex="-1">
+    <section class="scene is-on" data-id="0">
+      <div class="ken"><img src="img/01-aerial.jpg" alt="" /></div>
+      <div class="titlecard"><em>The desert</em></div>
+    </section>
+    <section class="scene" data-id="1">
+      <div class="ken ken-alt"><img src="img/02-approach.jpg" alt="" /></div>
+      <div class="titlecard"><em>Approach</em></div>
+    </section>
+    <section class="scene" data-id="2">
+      <div class="ken"><img src="img/03-arrival.jpg" alt="" /></div>
+      <div class="titlecard"><em>Threshold</em></div>
+    </section>
+    <section class="scene" data-id="3">
+      <div class="ken ken-alt"><img src="img/04-courtyard.jpg" alt="" /></div>
+      <div class="titlecard"><em>The court</em></div>
+    </section>
+    <section class="scene scene-diagram" data-id="4">
+      <div class="ken ken-contain"><img src="img/05-climate.jpg" alt="" /></div>
+      <div class="titlecard dark"><em>How it breathes</em></div>
+    </section>
+    <section class="scene" data-id="5">
+      <div class="ken"><img src="img/06-glass.jpg" alt="" /></div>
+      <div class="titlecard"><em>Glass</em></div>
+    </section>
+    <section class="scene" data-id="6">
+      <div class="ken ken-alt"><img src="img/07-aluminum.jpg" alt="" /></div>
+      <div class="titlecard"><em>Aluminium</em></div>
+    </section>
+    <section class="scene" data-id="7">
+      <div class="ken"><img src="img/08-steel.jpg" alt="" /></div>
+      <div class="titlecard"><em>Steel</em></div>
+    </section>
+    <section class="scene" data-id="8">
+      <div class="ken ken-alt"><img src="img/09-logistics.jpg" alt="" /></div>
+      <div class="titlecard"><em>The loop</em></div>
+    </section>
+    <section class="scene" data-id="9">
+      <div class="ken"><img src="img/10-admin.jpg" alt="" /></div>
+      <div class="titlecard"><em>Quiet work</em></div>
+    </section>
+    <section class="scene" data-id="10">
+      <div class="ken ken-wide"><img src="img/11-exit.jpg" alt="" /></div>
+      <div class="titlecard"><em>Leave</em></div>
+    </section>
+    <section class="scene scene-end" data-id="11">
+      <div class="ken"><img src="img/12-hero.jpg" alt="" /></div>
+      <div class="endcard">
+        <p>Port Sudan</p>
+        <h2>Building Materials Factory</h2>
+        <p class="place">Sudan</p>
+        <p class="meta">Mohammed Al-Hadi Yagoub<br />Garden City University<br />Semester 09</p>
+      </div>
+    </section>
+  </main>
+
+  <aside class="plan-layer" id="planLayer" hidden>
+    <figure>
+      <img src="img/plan.jpg" alt="Floor plan" />
+    </figure>
+    <button type="button" id="closePlan">Close</button>
+  </aside>
+
+  <p id="caption" class="caption" hidden></p>
+  <audio id="vo" preload="auto"></audio>
+  <script src="app.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2caee8f0ecc1f11',t:'MTc4Njk5MzMzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f"}' crossorigin="anonymous"></script>
+</body>
+</html>
